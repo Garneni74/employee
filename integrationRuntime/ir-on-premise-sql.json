@@ -1,0 +1,7 @@
+{
+	"name": "ir-on-premise-sql",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "to connect to the on premise sql server "
+	}
+}

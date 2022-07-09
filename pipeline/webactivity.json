@@ -1,0 +1,32 @@
+{
+	"name": "webactivity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "00.00:10:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 180,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "\thttps://dummy.restapiexample.com/api/v1/employees",
+					"connectVia": {
+						"referenceName": "selfhostedir",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "GET",
+					"disableCertValidation": false
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-06-30T09:24:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

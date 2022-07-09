@@ -1,0 +1,9 @@
+{
+	"name": "adfgarneni",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "862755d9-872c-4942-8d5c-e3165100388a",
+		"tenantId": "d6d0f6d0-e31f-4109-8ad3-a1e3c48502f5"
+	}
+}
