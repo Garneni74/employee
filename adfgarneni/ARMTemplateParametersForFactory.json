@@ -5,13 +5,13 @@
 		"factoryName": {
 			"value": "adfgarneni"
 		},
-		"link1_connectionString": {
-			"value": ""
-		},
 		"SqlServer1_connectionString": {
 			"value": ""
 		},
 		"SqlServer1_password": {
+			"value": ""
+		},
+		"link1_connectionString": {
 			"value": ""
 		},
 		"SqlServer1_properties_typeProperties_userName": {

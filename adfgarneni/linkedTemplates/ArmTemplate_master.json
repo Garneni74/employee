@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adfgarneni"
 		},
-		"link1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'link1'"
-		},
 		"SqlServer1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
@@ -18,6 +14,10 @@
 		"SqlServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"link1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'link1'"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
@@ -50,14 +50,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"link1_connectionString": {
-						"value": "[parameters('link1_connectionString')]"
-					},
 					"SqlServer1_connectionString": {
 						"value": "[parameters('SqlServer1_connectionString')]"
 					},
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
+					},
+					"link1_connectionString": {
+						"value": "[parameters('link1_connectionString')]"
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
