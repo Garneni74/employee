@@ -8,6 +8,10 @@
 				"pipelineReference": {
 					"referenceName": "copydata",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"starttime": "@trigger().start time ",
+					"scheduletime": "@trigger().schedule time"
 				}
 			}
 		],

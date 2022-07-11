@@ -70,7 +70,7 @@
 				]
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Stored procedure system",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
