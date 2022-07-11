@@ -298,8 +298,8 @@
 						]
 					},
 					{
-						"name": "Delete1",
-						"type": "Delete",
+						"name": "Stored procedure s",
+						"type": "SqlServerStoredProcedure",
 						"dependsOn": [
 							{
 								"activity": "Copy data1",
@@ -317,24 +317,33 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"dataset": {
-								"referenceName": "sink",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"logStorageSettings": {
-								"linkedServiceName": {
-									"referenceName": "link1",
-									"type": "LinkedServiceReference"
+							"storedProcedureName": "[[dbo].[st_pipeline_log]",
+							"storedProcedureParameters": {
+								"pipeline_name": {
+									"value": "",
+									"type": "String"
 								},
-								"path": "logs"
-							},
-							"enableLogging": true,
-							"storeSettings": {
-								"type": "AzureBlobStorageReadSettings",
-								"recursive": true,
-								"enablePartitionDiscovery": false
+								"pipeline_runid": {
+									"value": "",
+									"type": "String"
+								},
+								"pipeline_runtime": {
+									"value": "",
+									"type": "String"
+								},
+								"pipeline_trigger": {
+									"value": "",
+									"type": "String"
+								},
+								"pipeline_datafactory": {
+									"value": "",
+									"type": "String"
+								}
 							}
+						},
+						"linkedServiceName": {
+							"referenceName": "SqlServer1",
+							"type": "LinkedServiceReference"
 						}
 					}
 				],
@@ -342,12 +351,37 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"parameters": {
+					"starttime": {
+						"type": "string"
+					},
+					"scheduletime": {
+						"type": "string"
+					}
+				},
+				"variables": {
+					"pipeline name": {
+						"type": "String"
+					},
+					"pipeline datafactory": {
+						"type": "String"
+					},
+					"trigger type": {
+						"type": "String"
+					},
+					"trigger time": {
+						"type": "String"
+					},
+					"run id": {
+						"type": "String"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/empdataset')]",
 				"[concat(variables('factoryId'), '/datasets/sink')]",
-				"[concat(variables('factoryId'), '/linkedServices/link1')]"
+				"[concat(variables('factoryId'), '/linkedServices/SqlServer1')]"
 			]
 		},
 		{
@@ -399,6 +433,37 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/sink')]",
 				"[concat(variables('factoryId'), '/linkedServices/link1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/schedule triggerf')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "copydata",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Hour",
+						"interval": 1,
+						"startTime": "2022-07-11T03:57:00Z",
+						"endTime": "2022-07-12T03:57:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/copydata')]"
 			]
 		}
 	]
