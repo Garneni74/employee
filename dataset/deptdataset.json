@@ -1,0 +1,33 @@
+{
+	"name": "deptdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "link1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dept.CSV",
+				"folderPath": "input",
+				"container": "employeedept"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "DEPID",
+				"type": "String"
+			},
+			{
+				"name": "DEPTNAME",
+				"type": "String"
+			}
+		]
+	}
+}
