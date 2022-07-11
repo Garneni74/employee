@@ -89,10 +89,22 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataset": {
+						"referenceName": "sink",
+						"type": "DatasetReference"
+					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "link1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "logs"
+					},
 					"enableLogging": true,
-					"recursive": {
-						"value": "@activity('Copy data1').output ",
-						"type": "Expression"
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
 					}
 				}
 			}
