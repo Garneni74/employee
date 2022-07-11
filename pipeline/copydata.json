@@ -70,6 +70,23 @@
 				]
 			}
 		],
+		"variables": {
+			"pipeline name": {
+				"type": "String"
+			},
+			"pipeline datafactory": {
+				"type": "String"
+			},
+			"trigger type": {
+				"type": "String"
+			},
+			"trigger time": {
+				"type": "String"
+			},
+			"run id": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
