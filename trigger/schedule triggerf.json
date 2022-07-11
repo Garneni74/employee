@@ -1,0 +1,25 @@
+{
+	"name": "schedule triggerf",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copydata",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2022-07-11T03:57:00Z",
+				"endTime": "2022-07-12T03:57:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
