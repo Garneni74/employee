@@ -68,8 +68,65 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[st_pipeline_log]",
+					"storedProcedureParameters": {
+						"pipeline_name": {
+							"value": "",
+							"type": "String"
+						},
+						"pipeline_runid": {
+							"value": "",
+							"type": "String"
+						},
+						"pipeline_runtime": {
+							"value": "",
+							"type": "String"
+						},
+						"pipeline_trigger": {
+							"value": "",
+							"type": "String"
+						},
+						"pipeline_datafactory": {
+							"value": "",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "SqlServer1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
+		"parameters": {
+			"starttime": {
+				"type": "string"
+			},
+			"scheduletime": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"pipeline name": {
 				"type": "String"
