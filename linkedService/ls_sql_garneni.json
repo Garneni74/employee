@@ -1,0 +1,17 @@
+{
+	"name": "ls_sql_garneni",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DESKTOP-JO8NDIS;initial catalog=garneni",
+			"userName": "DESKTOP-JO8NDIS\\gopig",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMTZmMjA4OS00NzYxLTQwNTEtOTA3Yy1iZTgxODBlNWYzMzQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "newsqlservr",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
