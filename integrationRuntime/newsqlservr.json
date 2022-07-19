@@ -1,0 +1,6 @@
+{
+	"name": "newsqlservr",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
